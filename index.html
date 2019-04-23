@@ -1,7 +1,15 @@
 <!DOCTYPE html>
 <html>
 <head>
-	<title>SNUF Final Year</title>
+	<title>Gesture Control</title>
+
+
+	<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+
+<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+
 
 	<script type="text/javascript" src="js/jquery.js"></script>
 
@@ -10,10 +18,16 @@
 		
 $(document).ready(function() {
 
+var a = 0;
+var b = 0;
+
+    $('.tot_score').html(a);
+    $('.cur_score').html(b);
+
+
+
+
     $('.test3').hide();
-
-
-
     $('html').click(function(){
 
 
@@ -22,7 +36,28 @@ $(document).ready(function() {
 
     document.body.onkeyup = function(e){
     if(e.keyCode == 32){
-            $('.test3').show();
+
+a = a+2;
+b = 2;
+
+    $('.tot_score').html(a);
+    $('.cur_score').html(b);
+
+
+$('.test3').show();
+$('.test2').hide();	
+
+
+
+setTimeout(function(){
+
+$('.test3').hide();
+$('.test2').show();	
+
+
+
+},5000); 
+
 
     }
 }
@@ -34,15 +69,83 @@ $(document).ready(function() {
 
 
 	</script>
+
 </head>
 <body>
 
 
+<nav class="navbar navbar-expand-lg navbar-light bg-light">
+  <a class="navbar-brand" href="#">SNUF</a>
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
 
-<img src="img/giphy.gif" class="test3">
+  <div class="collapse navbar-collapse" id="navbarSupportedContent">
+    <ul class="navbar-nav mr-auto">
+      <li class="nav-item active">
+        <a class="nav-link" href="#">Home <span class="sr-only">(current)</span></a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="#">Profile</a>
+      </li>
+      <li class="nav-item dropdown">
+        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+          Dropdown
+        </a>
+        <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+          <a class="dropdown-item" href="#">Action</a>
+          <a class="dropdown-item" href="#">Report</a>
+          <div class="dropdown-divider"></div>
+          <a class="dropdown-item" href="#">Find People</a>
+        </div>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link disabled" href="#" tabindex="-1" aria-disabled="true">Logout</a>
+      </li>
+    </ul>
+    <form class="form-inline my-2 my-lg-0">
+      <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
+      <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
+    </form>
+  </div>
+</nav>
+
+
+<section>
+	
+<div class="row">
+<div class="col-sm-6" style="background-color: #d3d3d3;height: 20px;height: 25em;box-shadow: 1px 1px 1px 1px #a6a6a6;">
 	
 
-<div class="test2">Go Ahead!</div>
+<img src="img/giphy.gif" class="test3"  style="margin-top: 10%;margin-left:12%;">
+	
+
+<p class="test2" style="text-align:center;width:100%;vertical-align:middle;padding-top: 20%;font-weight: bold;font-size: 5em;">Go Ahead!</p>
+
+</div>
+
+
+<div class="col-sm-6" style="background-color: #f6f6f6;height: 20px;height: 25em;box-shadow: 1px 1px 1px 1px #a6a6a6;">
+
+<div style="height: 5em;background-color: #d5d5d5;width: 97%;color: #fff;">
+	<h2 style="text-align: center;padding-top: .5em;">Live Score Feed</h2>
+</div>	
+
+<div style="padding: 4em;">
+<h1>Total Score: <i class="tot_score"></i></h1>
+<p>
+<b>Name:</b> Neeraj Jadhav<br>
+<b>Current Score:</b> <i class="cur_score"></i><br>
+<b>Level:</b> 2<br>
+<b>Physio type:</b> Hand
+</p>
+</div>
+</div>
+
+
+</div>
+</section>
+
 
 </body>
 </html>
